@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "`user`")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -44,7 +44,7 @@ public class User extends BaseEntity{
     private String lastName;
 
     @Column(name = "activate")
-    private Byte activate;
+    private Boolean activate;
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore

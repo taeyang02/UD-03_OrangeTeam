@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
-@Table(name = "user_address")
+@Table(name = "`user_address`")
 @Getter
 @Setter
 @AllArgsConstructor

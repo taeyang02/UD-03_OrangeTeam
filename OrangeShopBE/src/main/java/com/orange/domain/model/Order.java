@@ -19,6 +19,7 @@ import java.util.Set;
 public class Order extends BaseEntity{
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonIgnore
     private UserPaymentMethod userPaymentMethod;
 
     @Size(max = 105)
@@ -28,7 +29,7 @@ public class Order extends BaseEntity{
 
     @NotNull
     @Column(name = "consignee_phone", nullable = false)
-    private Integer consigneePhone;
+    private String consigneePhone;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

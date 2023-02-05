@@ -9,7 +9,7 @@ import lombok.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "payment_type")
+@Table(name = "`payment_type`")
 @Getter
 @Setter
 @AllArgsConstructor

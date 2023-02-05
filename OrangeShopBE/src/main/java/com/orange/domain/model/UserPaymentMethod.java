@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(name = "user_payment_method")
+@Table(name = "`user_payment_method`")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,13 +18,11 @@ import java.util.Set;
 @Builder
 public class UserPaymentMethod extends BaseEntity{
     @NotNull
-    @ManyToOne
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private User user;
 
     @NotNull
-    @ManyToOne
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private PaymentType paymentType;
 
     @Size(max = 105)
@@ -38,7 +36,7 @@ public class UserPaymentMethod extends BaseEntity{
     private LocalDate expiryDate;
 
     @Column(name = "is_default")
-    private Byte isDefault;
+    private Boolean isDefault;
 
     @Column(name = "status")
     private Boolean status;

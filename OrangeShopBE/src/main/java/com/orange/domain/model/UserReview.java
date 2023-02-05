@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 import lombok.*;
 
 @Entity
-@Table(name = "user_review")
+@Table(name = "`user_review`")
 @Getter
 @Setter
 @AllArgsConstructor

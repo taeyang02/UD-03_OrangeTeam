@@ -8,7 +8,7 @@ import lombok.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "authority")
+@Table(name = "`authority`")
 @Getter
 @Setter
 @AllArgsConstructor
