@@ -1,7 +1,10 @@
 package com.orange.controller;
 
 import com.orange.domain.model.Order;
+import com.orange.payload.request.PaginationOption;
 import com.orange.services.OrderService;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +25,11 @@ public class OrderController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<Order>> getAllOrder(){
-        List<Order> list = this.orderService.getAll();
+    public ResponseEntity<?> getAllOrder(PaginationOption paginationOption){
+        List<?> list = this.orderService.getAll(
+                PageRequest.of(paginationOption.getPageNumber(),
+                        paginationOption.getPageSize(),
+                        paginationOption.getSort()));
         return ResponseEntity.ok().body(list);
     }
 }

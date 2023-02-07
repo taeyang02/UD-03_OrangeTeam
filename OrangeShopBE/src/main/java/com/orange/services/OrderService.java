@@ -2,6 +2,7 @@ package com.orange.services;
 
 import com.orange.domain.model.Order;
 import com.orange.repositories.IOrderRepository;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public List<Order> getAll(){
-        return this.orderRepository.findAll();
+    public List<Order> getAll(Pageable pageable){
+        return this.orderRepository.findAll(pageable).get().toList();
     }
 }
