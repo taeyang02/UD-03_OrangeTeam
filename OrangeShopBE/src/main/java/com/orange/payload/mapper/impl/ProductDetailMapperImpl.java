@@ -22,7 +22,7 @@ public class ProductDetailMapperImpl implements IProductDetailMapper {
     public ProductDetail toEntity(ProductDetailDTO dto) {
         ProductDetail entity = modelMapper.map(dto, ProductDetail.class);
         entity.setProduct(productMapper.toEntity(dto.getProduct()));
-        entity.setVariationOptions(variationOptionMapper.toEntity(dto.getVariationOptions()));
+        entity.setVariationOptions(variationOptionMapper.toEntitySet(dto.getVariationOptions()));
         return entity;
     }
 
@@ -30,7 +30,7 @@ public class ProductDetailMapperImpl implements IProductDetailMapper {
     public ProductDetailDTO toDto(ProductDetail entity) {
         ProductDetailDTO dto = modelMapper.map(entity, ProductDetailDTO.class);
         dto.setProduct(productMapper.toDto(entity.getProduct()));
-        dto.setVariationOptions(variationOptionMapper.toDto(entity.getVariationOptions()));
+        dto.setVariationOptions(variationOptionMapper.toDtoSet(entity.getVariationOptions()));
         return dto;
     }
 }

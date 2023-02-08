@@ -1,17 +1,15 @@
 package com.orange.controller;
 
-import com.orange.domain.model.Order;
+import com.orange.exception.EntityIsEmptyException;
 import com.orange.payload.request.PaginationOption;
+import com.orange.payload.response.OrderDTO;
 import com.orange.services.OrderService;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -25,11 +23,18 @@ public class OrderController {
     }
 
     @GetMapping("")
-    public ResponseEntity<?> getAllOrder(PaginationOption paginationOption){
-        List<?> list = this.orderService.getAll(
-                PageRequest.of(paginationOption.getPageNumber(),
-                        paginationOption.getPageSize(),
-                        paginationOption.getSort()));
+    public ResponseEntity<?> getAllOrders(@RequestParam(defaultValue = "0") int page,
+                                          @RequestParam(defaultValue = "20") int size){
+        List<?> list = this.orderService.getAll(PageRequest.of(page, size));
         return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping("/order-detail")
+    public ResponseEntity<?> getOrderById(@RequestParam(value = "id", defaultValue = "0") Optional<Long> id){
+        if (!id.isPresent()){
+            throw new EntityIsEmptyException("Id is empty!");
+        }
+        OrderDTO orderDTO = this.orderService.fillOne(id.get());
+        return ResponseEntity.ok().body(orderDTO);
     }
 }

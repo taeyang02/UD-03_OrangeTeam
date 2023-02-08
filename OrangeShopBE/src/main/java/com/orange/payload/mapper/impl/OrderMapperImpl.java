@@ -27,7 +27,7 @@ public class OrderMapperImpl implements IOrderMapper {
         Order entity = modelMapper.map(dto, Order.class);
         entity.setAddress(addressMapper.toEntity(dto.getAddress()));
         entity.setUserPaymentMethod(userPaymentMethodMapper.toEntity(dto.getUserPaymentMethod()));
-        entity.setOrderDetails(orderDetailMapper.toEntity(dto.getOrderDetails()));
+        entity.setOrderDetails(orderDetailMapper.toEntitySet(dto.getOrderDetails()));
         return entity;
     }
 
@@ -36,7 +36,7 @@ public class OrderMapperImpl implements IOrderMapper {
         OrderDTO dto = modelMapper.map(entity, OrderDTO.class);
         dto.setAddress(addressMapper.toDto(entity.getAddress()));
         dto.setUserPaymentMethod(userPaymentMethodMapper.toDto(entity.getUserPaymentMethod()));
-        dto.setOrderDetails(orderDetailMapper.toDto(entity.getOrderDetails()));
+        dto.setOrderDetails(orderDetailMapper.toDtoSet(entity.getOrderDetails()));
         return dto;
     }
 }
