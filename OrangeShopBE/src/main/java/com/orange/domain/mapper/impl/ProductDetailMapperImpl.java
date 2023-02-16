@@ -1,11 +1,10 @@
 package com.orange.domain.mapper.impl;
 
+import com.orange.domain.dto.ProductDetailDTO;
 import com.orange.domain.mapper.IProductDetailMapper;
-import com.orange.domain.mapper.IProductMapper;
 import com.orange.domain.mapper.IVariationOptionMapper;
 import com.orange.domain.model.Product;
 import com.orange.domain.model.ProductDetail;
-import com.orange.domain.dto.ProductDetailDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

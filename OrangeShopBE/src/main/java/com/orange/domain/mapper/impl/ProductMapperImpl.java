@@ -1,7 +1,6 @@
 package com.orange.domain.mapper.impl;
 
 import com.orange.domain.dto.ProductDTO;
-import com.orange.domain.mapper.ICategoryMapper;
 import com.orange.domain.mapper.IProductDetailMapper;
 import com.orange.domain.mapper.IProductMapper;
 import com.orange.domain.model.Category;

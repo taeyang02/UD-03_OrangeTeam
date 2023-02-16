@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/test/order")
 public class OrderController {
 
-    private IOrderService orderService;
+    private final IOrderService orderService;
 
     public OrderController(IOrderService orderService) {
         this.orderService = orderService;
