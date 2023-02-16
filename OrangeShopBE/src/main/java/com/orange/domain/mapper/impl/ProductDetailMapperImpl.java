@@ -15,8 +15,6 @@ public class ProductDetailMapperImpl implements IProductDetailMapper {
     @Autowired
     private ModelMapper modelMapper;
     @Autowired
-    private IProductMapper productMapper;
-    @Autowired
     private IVariationOptionMapper variationOptionMapper;
 
     @Override

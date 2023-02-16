@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/order")
+@RequestMapping("/test/order")
 public class OrderController {
 
     private IOrderService orderService;

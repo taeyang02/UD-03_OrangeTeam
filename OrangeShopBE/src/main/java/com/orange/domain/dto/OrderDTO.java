@@ -28,5 +28,5 @@ public class OrderDTO extends BaseEntityDTO implements Serializable {
     private ShippingMethod shippingMethod;
     private OrderStatus orderStatus;
     private AddressDTO address;
-//    private Set<OrderDetailDTO> orderDetails;
+    private Set<OrderDetailDTO> orderDetails;
 }
