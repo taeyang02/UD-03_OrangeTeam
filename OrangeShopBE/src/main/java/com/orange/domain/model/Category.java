@@ -39,4 +39,8 @@ public class Category extends BaseEntity{
     @JoinTable(name = "category_promotion", joinColumns = {@JoinColumn(name = "category_id")},
             inverseJoinColumns = {@JoinColumn(name = "promotion_id")})
     private Set<Promotion> promotions = new HashSet<>();
+
+    public Category(Long categoryId) {
+        this.setId(categoryId);
+    }
 }

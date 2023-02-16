@@ -40,4 +40,8 @@ public class Product extends BaseEntity{
     @OneToMany(mappedBy = "product")
     @JsonIgnore
     private Set<ProductDetail> productDetails;
+
+    public Product(Long productId) {
+        this.setId(productId);
+    }
 }
