@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.*;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -49,4 +48,8 @@ public class Order extends BaseEntity{
     @OneToMany(mappedBy = "order")
     @JsonIgnore
     private Set<OrderDetail> orderDetails;
+
+    public Order(Long orderId) {
+        this.setId(orderId);
+    }
 }

@@ -30,4 +30,8 @@ public class Village extends BaseEntity{
     @OneToMany(mappedBy = "village")
     @JsonIgnore
     private Set<Address> addresses;
+
+    public Village(Long villageId) {
+        this.setId(villageId);
+    }
 }

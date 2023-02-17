@@ -45,4 +45,8 @@ public class ProductDetail extends BaseEntity{
     @JoinTable(name = "product_detail_variation_option", joinColumns = {@JoinColumn(name = "product_detail_id")},
             inverseJoinColumns = {@JoinColumn(name = "variation_option_id")})
     private Set<VariationOption> variationOptions = new HashSet<>();
+
+    public ProductDetail(Long productDetailId) {
+        this.setId(productDetailId);
+    }
 }

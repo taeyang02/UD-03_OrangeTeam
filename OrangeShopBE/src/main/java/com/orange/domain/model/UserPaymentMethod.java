@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.*;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -30,7 +31,7 @@ public class UserPaymentMethod extends BaseEntity{
     private String provider;
 
     @Column(name = "account_number")
-    private Integer accountNumber;
+    private BigInteger accountNumber;
 
     @Column(name = "expiry_date")
     private LocalDate expiryDate;

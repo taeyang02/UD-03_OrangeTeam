@@ -62,4 +62,8 @@ public class User extends BaseEntity{
     @JoinTable(name = "account_authority", joinColumns = {@JoinColumn(name = "account_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Authority> roles = new HashSet<>();
+
+    public User(Long userID) {
+        this.setId(userID);
+    }
 }
