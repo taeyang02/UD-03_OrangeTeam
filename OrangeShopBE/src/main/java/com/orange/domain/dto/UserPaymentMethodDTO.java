@@ -14,8 +14,8 @@ import java.time.LocalDate;
  */
 @Data
 public class UserPaymentMethodDTO extends BaseEntityDTO implements Serializable {
-    @NotNull
-    private UserDTO user;
+
+    private Long userID;
     @NotNull
     private PaymentType paymentType;
     @Size(max = 105)

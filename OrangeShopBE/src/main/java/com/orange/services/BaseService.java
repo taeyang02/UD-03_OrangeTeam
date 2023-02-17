@@ -8,7 +8,7 @@ public interface BaseService<T, ID>{
     T create(T dto);
     T update(T dto);
     T delete(T dto);
-    Page<T> fillAll(Pageable pageable);
+    Page<?> fillAll(Pageable pageable);
 
     T fillById(ID id);
 }

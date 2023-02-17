@@ -36,4 +36,10 @@ public class OrderController {
         OrderDTO orderDTO = this.orderService.fillById(id.get());
         return ResponseEntity.ok().body(orderDTO);
     }
+
+    @PostMapping("/create-order")
+    public ResponseEntity<?> createOrder(@RequestBody OrderDTO orderDTO){
+        OrderDTO result = this.orderService.create(orderDTO);
+        return ResponseEntity.ok().body(result);
+    }
 }

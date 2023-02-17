@@ -12,7 +12,6 @@ import java.io.Serializable;
 public class OrderDetailDTO extends BaseEntityDTO implements Serializable {
     @NotNull
     private Long productDetailId;
-    @NotNull
     private Long orderId;
     @NotNull
     private Integer quantity;
